@@ -481,7 +481,9 @@
 				'format'                => $subscriber->getFormat(),
 				'force_sub'             => $subscriber->isForceSub(),
 				'override_confirmation' => $subscriber->isOverrideConfirmation(),
-				'data'                  => 'email,first,last,address_1,address_2,city,state,zip,country,phone,fax,company^'
+				'data'                  => 'email,first,last,address_1,address_2,city,state,zip,country,phone,fax,company,'
+					. $subscriber->getCustomFieldKeys()
+					. '^'
 					. $subscriber->getEmail() . ','
 					. $subscriber->getFirstName() . ','
 					. $subscriber->getLastName() . ','
@@ -493,7 +495,8 @@
 					. $subscriber->getCountry() . ','
 					. $subscriber->getPhone() . ','
 					. $subscriber->getFax() . ','
-					. $subscriber->getCompany()
+					. $subscriber->getCompany() . ','
+					. $subscriber->getCustomFieldValues()
 			);
 			$xml = $this->call('sub', $form_data);
 
