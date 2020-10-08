@@ -40,7 +40,7 @@ class Subscriber
      * @return Subscriber
      */
     public function setCustomData($key,$value) {
-        $this->custom[$key] = $value;
+        $this->custom['custom_' . $key] = $value;
         return $this;
     }
     
