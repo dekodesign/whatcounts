@@ -47,6 +47,22 @@ class Subscriber
     /**
      * @return mixed
      */
+    public function getCustomKeys()
+    {
+        return implode(',', array_keys( $this->custom ) );
+    }    
+    
+    /**
+     * @return mixed
+     */
+    public function getCustomValues()
+    {
+        return implode(',', array_values( $this->custom ) );
+    }      
+    
+    /**
+     * @return mixed
+     */
     public function getSubscriberId()
     {
         return $this->subscriber_id;
