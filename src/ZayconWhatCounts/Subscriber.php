@@ -47,7 +47,7 @@ class Subscriber
     /**
      * @return mixed
      */
-    public function getCustomKeys()
+    public function getCustomFieldKeys()
     {
         return implode(',', array_keys( $this->custom ) );
     }    
@@ -55,7 +55,7 @@ class Subscriber
     /**
      * @return mixed
      */
-    public function getCustomValues()
+    public function getCustomFieldValues()
     {
         return implode(',', array_values( $this->custom ) );
     }      
