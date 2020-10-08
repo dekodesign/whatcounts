@@ -32,7 +32,18 @@ class Subscriber
     private $override_confirmation = FALSE;
     private $force_sub = FALSE;
     private $lists = array();
-
+    private $custom = array();
+    
+    /**
+     * @param mixed $key
+     * @param mixed $value
+     * @return Subscriber
+     */
+    public function setCustomData($key,$value) {
+        $this->custom[$key] = $value;
+        return $this;
+    }
+    
     /**
      * @return mixed
      */
